@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title class="project project1 hidden">Portfolio of Khademul</title>
+
+    <link rel="stylesheet" href="assets/styles.css">
+
+        <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <!-- or if .ico
+     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">  -->
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            light: '#3b82f6',
+                            dark: '#2563eb'
+                        },
+                        secondary: {
+                            light: '#10b981',
+                            dark: '#059669'
+                        }
+                    },
+                    animation: {
+                        'spin-slow': 'spin 8s linear infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <!-- Local stylesheet (replace or remove if not needed) -->
+    
+
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- AOS Animations -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+
+    <!-- Alpine.js for interactivity -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Include header layout -->
+    <!-- ==================== Header/Navigation ==================== -->
+    <header  class="fixed w-full z-50 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-primary-light dark:text-primary-dark">
+                    <span class="text-secondary-light dark:text-secondary-dark">P</span>ortfolio
+                </a>
+        
+                <div class="flex items-center space-x-6">
+                    <nav class="hidden md:flex space-x-8">
+                        <a href="index.html" class="nav-link active">Home</a>
+                        <a href="index.html#about" class="nav-link">About</a>
+                        <a href="index.html#skills" class="nav-link">Skills</a>
+                        <a href="projects.html" class="nav-link">Projects</a>
+                        <a href="index.html#contact" class="nav-link">Contact</a>
+                        <!-- download cv -->
+                        <a href="assets/cv.pdf" download="CV_Khademul_Islam.pdf"> Download CV </a>
+                    </nav>
+        
+                    <button id="theme-toggle" class="p-2 rounded-full focus:outline-none hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-200">
+                        <i id="moon-icon" class="fas fa-moon text-gray-700 dark:text-yellow-300 hidden dark:block"></i>
+                        <i id="sun-icon" class="fas fa-sun text-gray-700 dark:text-yellow-300 block dark:hidden"></i>
+                    </button>
+        
+                   <button id="eye-comfort-toggle" class="px-2 py-1 border rounded hidden">
+                    Eye Comfort
+                    </button>
+        
+        
+        
+        
+                    <button id="mobile-menu-button" class="md:hidden p-2 rounded-full focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg">
+            <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#skills" class="nav-link">Skills</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+                <!-- download cv -->
+                <a href="assets/cv.pdf" download="CV_Khademul_Islam.pdf"> Download CV </a>
+            </div>
+        </div>
+
+    </header>
+    <!-- ==================== End Header/Navigation ==================== -->
+    <!-- Header scripts are consolidated at the bottom for performance -->
+
+    <!-- Main content section -->
+    <main class="flex-grow pt-24">
+      <!-- for project 1 -->
+        <!-- Hero Section -->
+        <section  class="project project1 project-hero text-white py-16 md:py-24 hidden">
+            <div class="container mx-auto px-4">
+                <a href="#" class="back-button inline-flex items-center text-white opacity-90 hover:opacity-100 mb-6 transition-opacity">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    <span>Back to Projects</span>
+                </a>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">E-Commerce Platform</h1>
+                <p class="text-xl max-w-2xl opacity-90 animate-fade-in">A modern, responsive e-commerce solution with seamless user experience and robust functionality.</p>
+            </div>
+        </section>
+
+        <!-- Project Details -->
+        <section  class="project project1 py-16 hidden">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    <!-- Main Content -->
+                    <div class="lg:col-span-2">
+                        <!-- Project Image -->
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-8 project-image">
+                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
+                                 alt="E-Commerce Platform" class="w-full h-auto">
+                        </div>
+
+                        <!-- Project Description -->
+                        <div class="mb-12">
+                            <h2 class="text-2xl font-bold mb-4 text-gray-800">Project Overview</h2>
+                            <p class="text-gray-600 mb-4">
+                                This e-commerce platform was designed to provide users with a seamless shopping experience. 
+                                The project involved creating an intuitive user interface, implementing secure payment processing, 
+                                and developing a robust admin dashboard for product management.
+                            </p>
+                            <p class="text-gray-600">
+                                The platform features user authentication, product filtering and search, shopping cart functionality, 
+                                order tracking, and a responsive design that works flawlessly across all devices. Special attention 
+                                was given to performance optimization and accessibility standards.
+                            </p>
+                        </div>
+
+                        <!-- Gallery -->
+                        <div class="mb-12">
+                            <h2 class="text-2xl font-bold mb-6 text-gray-800">Project Gallery</h2>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="rounded-lg overflow-hidden shadow-md gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1563014959-7aaa83350992?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
+                                         alt="E-Commerce Dashboard" class="w-full h-48 object-cover">
+                                </div>
+                                <div class="rounded-lg overflow-hidden shadow-md gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
+                                         alt="Product Page" class="w-full h-48 object-cover">
+                                </div>
+                                <div class="rounded-lg overflow-hidden shadow-md gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1115&q=80" 
+                                         alt="Shopping Cart" class="w-full h-48 object-cover">
+                                </div>
+                                <div class="rounded-lg overflow-hidden shadow-md gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1065&q=80" 
+                                         alt="Checkout Process" class="w-full h-48 object-cover">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Challenges & Solutions -->
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4 text-gray-800">Challenges & Solutions</h2>
+                            <div class="bg-gray-50 p-6 rounded-xl">
+                                <div class="mb-6">
+                                    <h3 class="text-lg font-semibold mb-2 text-indigo-600">Performance Optimization</h3>
+                                    <p class="text-gray-600">
+                                        The initial load time was exceeding 5 seconds due to large image files and unoptimized code. 
+                                        I implemented lazy loading, image compression, and code splitting to reduce load time to under 2 seconds.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-2 text-indigo-600">Payment Integration</h3>
+                                    <p class="text-gray-600">
+                                        Integrating multiple payment gateways while maintaining security standards was challenging. 
+                                        I used a well-documented payment API and implemented proper encryption to handle sensitive data.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="lg:col-span-1">
+                        <!-- Project Info -->
+                        <div class="bg-white p-6 rounded-xl shadow-md sticky top-24">
+                            <h2 class="text-xl font-bold mb-4 text-gray-800">Project Details</h2>
+                            
+                            <div class="mb-6">
+                                <h3 class="font-semibold text-gray-700">Client</h3>
+                                <p class="text-gray-600">Fashion Retail Co.</p>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h3 class="font-semibold text-gray-700">Timeline</h3>
+                                <p class="text-gray-600">January 2023 - June 2023</p>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h3 class="font-semibold text-gray-700">My Role</h3>
+                                <p class="text-gray-600">Full-Stack Developer</p>
+                            </div>
+                            
+                            <div class="mb-8">
+                                <h3 class="font-semibold text-gray-700 mb-2">Technologies</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">React</span>
+                                    <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Node.js</span>
+                                    <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">MongoDB</span>
+                                    <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Express</span>
+                                    <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">TailwindCSS</span>
+                                    <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Stripe API</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-col space-y-3">
+                                <a href="#" class="bg-indigo-600 text-white text-center py-3 rounded-lg font-medium hover:bg-indigo-700 transition-colors">
+                                    <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                                </a>
+                                <a href="#" class="border border-gray-300 text-gray-700 text-center py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+                                    <i class="fab fa-github mr-2"></i>View Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECT 2: Analytics Dashboard -->
+        <section class="project project2 project-hero text-white py-16 md:py-24 hidden">
+            <div class="container mx-auto px-4">
+            <a href="#" class="back-button inline-flex items-center text-white opacity-90 hover:opacity-100 mb-6 transition-opacity">
+                <i class="fas fa-arrow-left mr-2"></i>
+                <span>Back to Projects</span>
+            </a>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Analytics Dashboard</h1>
+            <p class="text-xl max-w-2xl opacity-90 animate-fade-in">
+                A data visualization dashboard that tracks KPIs, sales metrics, and user analytics in real-time for business decision-making.
+            </p>
+            </div>
+        </section>
+        
+        <section class="project project2 py-16 hidden">
+            <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <div class="lg:col-span-2">
+                <!-- Image -->
+                <div class="rounded-xl overflow-hidden shadow-lg mb-8 project-image">
+                    <img src="https://images.unsplash.com/photo-1581091215369-9ebf4b0cdb87?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
+                        alt="Analytics Dashboard" class="w-full h-auto">
+                </div>
+                <!-- Description -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold mb-4 text-gray-800">Project Overview</h2>
+                    <p class="text-gray-600 mb-4">
+                    This dashboard centralizes business data into interactive charts and tables. Users can track revenue, website traffic, sales conversions, and other key metrics.
+                    </p>
+                    <p class="text-gray-600">
+                    Features include customizable widgets, real-time data updates, role-based access, and exportable reports. Designed for intuitive insights and rapid decision-making.
+                    </p>
+                </div>
+                <!-- Gallery -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-800">Project Gallery</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="rounded-lg overflow-hidden shadow-md gallery-item">
+                        <img src="https://images.unsplash.com/photo-1581091215369-9ebf4b0cdb87?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
+                            alt="Dashboard Overview" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="rounded-lg overflow-hidden shadow-md gallery-item">
+                        <img src="https://images.unsplash.com/photo-1581093458797-d3de07f787ed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
+                            alt="KPI Metrics" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="rounded-lg overflow-hidden shadow-md gallery-item">
+                        <img src="https://images.unsplash.com/photo-1596079890023-28c0f9b9f7be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1115&q=80" 
+                            alt="Graphs and Charts" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="rounded-lg overflow-hidden shadow-md gallery-item">
+                        <img src="https://images.unsplash.com/photo-1596079977687-7f3e71fa0647?ixlib=rb-4.0.3&auto=format&fit=crop&w=1065&q=80" 
+                            alt="Analytics Widgets" class="w-full h-48 object-cover">
+                    </div>
+                    </div>
+                </div>
+                <!-- Challenges -->
+                <div>
+                    <h2 class="text-2xl font-bold mb-4 text-gray-800">Challenges & Solutions</h2>
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="mb-6">
+                        <h3 class="text-lg font-semibold mb-2 text-indigo-600">Real-Time Data</h3>
+                        <p class="text-gray-600">Implementing live updates for charts and metrics was tricky. Used WebSocket connections for instant updates across all dashboards.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2 text-indigo-600">Data Visualization</h3>
+                        <p class="text-gray-600">Displaying complex datasets in an understandable format required using chart libraries like Chart.js and D3.js with optimized queries.</p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <!-- Sidebar -->
+                <div class="lg:col-span-1">
+                <div class="bg-white p-6 rounded-xl shadow-md sticky top-24">
+                    <h2 class="text-xl font-bold mb-4 text-gray-800">Project Details</h2>
+                    <div class="mb-6">
+                    <h3 class="font-semibold text-gray-700">Client</h3>
+                    <p class="text-gray-600">Global Insights Inc.</p>
+                    </div>
+                    <div class="mb-6">
+                    <h3 class="font-semibold text-gray-700">Timeline</h3>
+                    <p class="text-gray-600">March 2023 – July 2023</p>
+                    </div>
+                    <div class="mb-6">
+                    <h3 class="font-semibold text-gray-700">My Role</h3>
+                    <p class="text-gray-600">Front-End & Data Developer</p>
+                    </div>
+                    <div class="mb-8">
+                    <h3 class="font-semibold text-gray-700 mb-2">Technologies</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">React</span>
+                        <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Node.js</span>
+                        <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Chart.js</span>
+                        <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">TailwindCSS</span>
+                    </div>
+                    </div>
+                    <div class="flex flex-col space-y-3">
+                    <a href="#" class="bg-indigo-600 text-white text-center py-3 rounded-lg font-medium hover:bg-indigo-700 transition-colors">
+                        <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                    </a>
+                    <a href="#" class="border border-gray-300 text-gray-700 text-center py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+                        <i class="fab fa-github mr-2"></i>View Code
+                    </a>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        
+        <!-- PROJECT 3: Task Management App -->
+        <section class="project project3 project-hero text-white py-16 md:py-24 hidden">
+            <div class="container mx-auto px-4">
+            <a href="#" class="back-button inline-flex items-center text-white opacity-90 hover:opacity-100 mb-6 transition-opacity">
+                <i class="fas fa-arrow-left mr-2"></i>
+                <span>Back to Projects</span>
+            </a>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Task Management App</h1>
+            <p class="text-xl max-w-2xl opacity-90 animate-fade-in">
+                A collaborative task management platform to organize, assign, and track team projects efficiently.
+            </p>
+            </div>
+        </section>
+        
+        <section class="project project3 py-16 hidden">
+            <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <div class="lg:col-span-2">
+                <!-- Image -->
+                <div class="rounded-xl overflow-hidden shadow-lg mb-8 project-image">
+                    <img src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
+                        alt="Task Management Dashboard" class="w-full h-auto">
+                </div>
+                <!-- Description -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold mb-4 text-gray-800">Project Overview</h2>
+                    <p class="text-gray-600 mb-4">
+                    Designed for teams to manage tasks, deadlines, and project priorities in one centralized system. Users can create projects, assign tasks, set deadlines, and track progress.
+                    </p>
+                    <p class="text-gray-600">
+                    Features include kanban boards, progress tracking, notifications, and collaboration tools. Mobile responsive and optimized for productivity.
+                    </p>
+                </div>
+                <!-- Gallery -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-800">Project Gallery</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="rounded-lg overflow-hidden shadow-md gallery-item">
+                        <img src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
+                            alt="Project Board" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="rounded-lg overflow-hidden shadow-md gallery-item">
+                        <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
+                            alt="Task List" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="rounded-lg overflow-hidden shadow-md gallery-item">
+                        <img src="https://images.unsplash.com/photo-1581091215369-9ebf4b0cdb87?ixlib=rb-4.0.3&auto=format&fit=crop&w=1115&q=80" 
+                            alt="Kanban Board" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="rounded-lg overflow-hidden shadow-md gallery-item">
+                        <img src="https://images.unsplash.com/photo-1581093458797-d3de07f787ed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1065&q=80" 
+                            alt="Task Notifications" class="w-full h-48 object-cover">
+                    </div>
+                    </div>
+                </div>
+                <!-- Challenges -->
+                <div>
+                    <h2 class="text-2xl font-bold mb-4 text-gray-800">Challenges & Solutions</h2>
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="mb-6">
+                        <h3 class="text-lg font-semibold mb-2 text-indigo-600">Real-Time Updates</h3>
+                        <p class="text-gray-600">Synchronizing task status across users required WebSocket implementation for instant updates.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2 text-indigo-600">User Collaboration</h3>
+                        <p class="text-gray-600">Ensuring smooth team collaboration and notifications involved building role-based permissions and alerts.</p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <!-- Sidebar -->
+                <div class="lg:col-span-1">
+                <div class="bg-white p-6 rounded-xl shadow-md sticky top-24">
+                    <h2 class="text-xl font-bold mb-4 text-gray-800">Project Details</h2>
+                    <div class="mb-6">
+                    <h3 class="font-semibold text-gray-700">Client</h3>
+                    <p class="text-gray-600">Team Productivity Co.</p>
+                    </div>
+                    <div class="mb-6">
+                    <h3 class="font-semibold text-gray-700">Timeline</h3>
+                    <p class="text-gray-600">April 2023 – August 2023</p>
+                    </div>
+                    <div class="mb-6">
+                    <h3 class="font-semibold text-gray-700">My Role</h3>
+                    <p class="text-gray-600">Full-Stack Developer</p>
+                    </div>
+                    <div class="mb-8">
+                    <h3 class="font-semibold text-gray-700 mb-2">Technologies</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">React</span>
+                        <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Node.js</span>
+                        <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Express</span>
+                        <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">MongoDB</span>
+                        <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">TailwindCSS</span>
+                    </div>
+                    </div>
+                    <div class="flex flex-col space-y-3">
+                    <a href="#" class="bg-indigo-600 text-white text-center py-3 rounded-lg font-medium hover:bg-indigo-700 transition-colors">
+                        <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                    </a>
+                    <a href="#" class="border border-gray-300 text-gray-700 text-center py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+                        <i class="fab fa-github mr-2"></i>View Code
+                    </a>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        
+        <!-- PROJECT 4: Portfolio Website Platform -->
+        <section class="project project4 project-hero text-white py-16 md:py-24 hidden">
+            <div class="container mx-auto px-4">
+            <a href="#" class="back-button inline-flex items-center text-white opacity-90 hover:opacity-100 mb-6 transition-opacity">
+                <i class="fas fa-arrow-left mr-2"></i>
+                <span>Back to Projects</span>
+            </a>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Portfolio Website Platform</h1>
+            <p class="text-xl max-w-2xl opacity-90 animate-fade-in">
+                A platform for developers and designers to showcase their projects, skills, and experience with customizable portfolio templates.
+            </p>
+            </div>
+        </section>
+        
+        <section class="project project4 py-16 hidden">
+            <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <div class="lg:col-span-2">
+                <!-- Project Image -->
+                <div class="rounded-xl overflow-hidden shadow-lg mb-8 project-image">
+                    <img src="https://images.unsplash.com/photo-1502767089025-6572583495d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
+                        alt="Portfolio Website" class="w-full h-auto">
+                </div>
+        
+                <!-- Project Description -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold mb-4 text-gray-800">Project Overview</h2>
+                    <p class="text-gray-600 mb-4">
+                    This platform allows users to build their personal portfolio websites with customizable sections for projects, skills, experience, and contact forms.
+                    </p>
+                    <p class="text-gray-600">
+                    Features include pre-built templates, responsive design, dark/light mode, and integration with GitHub for showcasing real projects. Users can deploy their portfolio with a single click.
+                    </p>
+                </div>
+        
+                <!-- Gallery -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-800">Project Gallery</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="rounded-lg overflow-hidden shadow-md gallery-item">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
+                            alt="Portfolio Template 1" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="rounded-lg overflow-hidden shadow-md gallery-item">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
+                            alt="Portfolio Template 2" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="rounded-lg overflow-hidden shadow-md gallery-item">
+                        <img src="https://images.unsplash.com/photo-1521790797524-b2497295b8a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1115&q=80" 
+                            alt="Portfolio Template 3" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="rounded-lg overflow-hidden shadow-md gallery-item">
+                        <img src="https://images.unsplash.com/photo-1521790797524-b2497295b8a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1065&q=80" 
+                            alt="Portfolio Template 4" class="w-full h-48 object-cover">
+                    </div>
+                    </div>
+                </div>
+        
+                <!-- Challenges & Solutions -->
+                <div>
+                    <h2 class="text-2xl font-bold mb-4 text-gray-800">Challenges & Solutions</h2>
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="mb-6">
+                        <h3 class="text-lg font-semibold mb-2 text-indigo-600">Responsive Design</h3>
+                        <p class="text-gray-600">Ensuring all templates worked seamlessly on desktop, tablet, and mobile required extensive media queries and testing.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2 text-indigo-600">Dynamic Content</h3>
+                        <p class="text-gray-600">Allowing users to add projects dynamically and integrate GitHub required building a flexible component-based architecture.</p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+        
+                <!-- Sidebar -->
+                <div class="lg:col-span-1">
+                <div class="bg-white p-6 rounded-xl shadow-md sticky top-24">
+                    <h2 class="text-xl font-bold mb-4 text-gray-800">Project Details</h2>
+                    <div class="mb-6">
+                    <h3 class="font-semibold text-gray-700">Client</h3>
+                    <p class="text-gray-600">Personal Portfolio Platform</p>
+                    </div>
+                    <div class="mb-6">
+                    <h3 class="font-semibold text-gray-700">Timeline</h3>
+                    <p class="text-gray-600">May 2023 – September 2023</p>
+                    </div>
+                    <div class="mb-6">
+                    <h3 class="font-semibold text-gray-700">My Role</h3>
+                    <p class="text-gray-600">Full-Stack Developer & Designer</p>
+                    </div>
+                    <div class="mb-8">
+                    <h3 class="font-semibold text-gray-700 mb-2">Technologies</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Laravel</span>
+                        <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">PHP</span>
+                        <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">TailwindCSS</span>
+                        <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                        <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">MySQL</span>
+                    </div>
+                    </div>
+                    <div class="flex flex-col space-y-3">
+                    <a href="#" class="bg-indigo-600 text-white text-center py-3 rounded-lg font-medium hover:bg-indigo-700 transition-colors">
+                        <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                    </a>
+                    <a href="#" class="border border-gray-300 text-gray-700 text-center py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+                        <i class="fab fa-github mr-2"></i>View Code
+                    </a>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </section>        
+        <!-- for project 5 -->
+        <section class="project project5 project-hero text-white py-16 md:py-24 hidden">
+        <div class="container mx-auto px-4">
+            <a href="#" class="back-button inline-flex items-center text-white opacity-90 hover:opacity-100 mb-6 transition-opacity">
+            <i class="fas fa-arrow-left mr-2"></i>
+            <span>Back to Projects</span>
+            </a>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">
+            CRM System
+            </h1>
+            <p class="text-xl max-w-2xl opacity-90 animate-fade-in">
+            A comprehensive Customer Relationship Management system for tracking leads, managing sales pipelines, and improving client engagement.
+            </p>
+        </div>
+        </section>
+        
+        <section class="project project5 py-16 hidden">
+            <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Main Content -->
+                <div class="lg:col-span-2">
+                <!-- Project Image -->
+                <div class="rounded-xl overflow-hidden shadow-lg mb-8 project-image">
+                    <img src="https://images.unsplash.com/photo-1581091215369-9ebf4b0cdb87?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
+                        alt="CRM Dashboard" class="w-full h-auto">
+                </div>
+        
+                <!-- Project Description -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold mb-4 text-gray-800">Project Overview</h2>
+                    <p class="text-gray-600 mb-4">
+                    The CRM system helps businesses manage interactions with current and potential customers. 
+                    It centralizes client information, tracks communication history, and provides insights for better decision-making.
+                    </p>
+                    <p class="text-gray-600">
+                    Features include lead management, sales tracking, client communication logging, task assignments, and automated reporting. 
+                    The system is designed to enhance team productivity and improve customer satisfaction by providing a clear overview of all client interactions.
+                    </p>
+                </div>
+        
+                <!-- Gallery -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-800">Project Gallery</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="rounded-lg overflow-hidden shadow-md gallery-item">
+                        <img src="https://images.unsplash.com/photo-1581091215369-9ebf4b0cdb87?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
+                            alt="CRM Dashboard Overview" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="rounded-lg overflow-hidden shadow-md gallery-item">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161b89a16?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
+                            alt="Client Profile Page" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="rounded-lg overflow-hidden shadow-md gallery-item">
+                        <img src="https://images.unsplash.com/photo-1596079890023-28c0f9b9f7be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1115&q=80" 
+                            alt="Sales Pipeline" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="rounded-lg overflow-hidden shadow-md gallery-item">
+                        <img src="https://images.unsplash.com/photo-1596079977687-7f3e71fa0647?ixlib=rb-4.0.3&auto=format&fit=crop&w=1065&q=80" 
+                            alt="Tasks & Notifications" class="w-full h-48 object-cover">
+                    </div>
+                    </div>
+                </div>
+        
+                <!-- Challenges & Solutions -->
+                <div>
+                    <h2 class="text-2xl font-bold mb-4 text-gray-800">Challenges & Solutions</h2>
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="mb-6">
+                        <h3 class="text-lg font-semibold mb-2 text-indigo-600">Data Organization</h3>
+                        <p class="text-gray-600">
+                        Managing large client databases and organizing leads efficiently was challenging. 
+                        Implemented relational database structure with filters, tags, and search functionality for quick access.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2 text-indigo-600">Real-Time Updates</h3>
+                        <p class="text-gray-600">
+                        Ensuring all team members see updated client info in real-time was complex. 
+                        Used AJAX and WebSocket connections to sync updates across dashboards instantly.
+                        </p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+        
+                <!-- Sidebar -->
+                <div class="lg:col-span-1">
+                <!-- Project Info -->
+                <div class="bg-white p-6 rounded-xl shadow-md sticky top-24">
+                    <h2 class="text-xl font-bold mb-4 text-gray-800">Project Details</h2>
+        
+                    <div class="mb-6">
+                    <h3 class="font-semibold text-gray-700">Client</h3>
+                    <p class="text-gray-600">ABC Corporation</p>
+                    </div>
+        
+                    <div class="mb-6">
+                    <h3 class="font-semibold text-gray-700">Timeline</h3>
+                    <p class="text-gray-600">February 2023 – May 2023</p>
+                    </div>
+        
+                    <div class="mb-6">
+                    <h3 class="font-semibold text-gray-700">My Role</h3>
+                    <p class="text-gray-600">Full-Stack Developer</p>
+                    </div>
+        
+                    <div class="mb-8">
+                    <h3 class="font-semibold text-gray-700 mb-2">Technologies</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Laravel</span>
+                        <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">MySQL</span>
+                        <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                        <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">TailwindCSS</span>
+                        <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">AJAX</span>
+                    </div>
+                    </div>
+        
+                    <div class="flex flex-col space-y-3">
+                    <a href="#" class="bg-indigo-600 text-white text-center py-3 rounded-lg font-medium hover:bg-indigo-700 transition-colors">
+                        <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                    </a>
+                    <a href="#" class="border border-gray-300 text-gray-700 text-center py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+                        <i class="fab fa-github mr-2"></i>View Code
+                    </a>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- for project 6 -->
+        <section class="project project6 project-hero text-white py-16 md:py-24 hidden">
+            <div class="container mx-auto px-4">
+            <a href="#" class="back-button inline-flex items-center text-white opacity-90 hover:opacity-100 mb-6 transition-opacity">
+                <i class="fas fa-arrow-left mr-2"></i>
+                <span>Back to Projects</span>
+            </a>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">
+                Attendance Management System
+            </h1>
+            <p class="text-xl max-w-2xl opacity-90 animate-fade-in">
+                A web-based attendance tracking system that automates student and employee attendance, improves accuracy, and provides real-time reporting.
+            </p>
+            </div>
+        </section>
+        
+        <section class="project project6 py-16 hidden">
+            <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Main Content -->
+                <div class="lg:col-span-2">
+                <!-- Project Image -->
+                <div class="rounded-xl overflow-hidden shadow-lg mb-8 project-image">
+                    <img src="https://images.unsplash.com/photo-1600267165477-6d4f39e0f44e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
+                        alt="Attendance System Dashboard" class="w-full h-auto">
+                </div>
+        
+                <!-- Project Description -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold mb-4 text-gray-800">Project Overview</h2>
+                    <p class="text-gray-600 mb-4">
+                    The Attendance Management System was built to replace traditional manual roll-calls and paper-based attendance tracking. 
+                    It allows teachers, HR managers, and administrators to record attendance quickly and accurately.
+                    </p>
+                    <p class="text-gray-600">
+                    Key features include real-time attendance logging, leave management, automated reports, and integration with email/SMS notifications. 
+                    The system ensures transparency and reduces time spent on repetitive administrative tasks.
+                    </p>
+                </div>
+        
+                <!-- Gallery -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-800">Project Gallery</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="rounded-lg overflow-hidden shadow-md gallery-item">
+                        <img src="https://images.unsplash.com/photo-1600880292089-90e0f9c6d7e6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
+                            alt="Dashboard Overview" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="rounded-lg overflow-hidden shadow-md gallery-item">
+                        <img src="https://images.unsplash.com/photo-1584697964403-8d21fb9d7f19?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
+                            alt="Attendance Report" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="rounded-lg overflow-hidden shadow-md gallery-item">
+                        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
+                            alt="Employee Attendance Tracking" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="rounded-lg overflow-hidden shadow-md gallery-item">
+                        <img src="https://images.unsplash.com/photo-1600267165783-52b369c6571d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1065&q=80"
+                            alt="Mobile App Attendance" class="w-full h-48 object-cover">
+                    </div>
+                    </div>
+                </div>
+        
+                <!-- Challenges & Solutions -->
+                <div>
+                    <h2 class="text-2xl font-bold mb-4 text-gray-800">Challenges & Solutions</h2>
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="mb-6">
+                        <h3 class="text-lg font-semibold mb-2 text-indigo-600">Accurate Time Tracking</h3>
+                        <p class="text-gray-600">
+                        Ensuring time accuracy across multiple devices was a challenge. 
+                        This was solved by synchronizing all timestamps with a centralized server.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2 text-indigo-600">Data Privacy</h3>
+                        <p class="text-gray-600">
+                        Since the system stores sensitive employee/student data, strict role-based access and 
+                        encryption were implemented to comply with data protection standards.
+                        </p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+        
+                <!-- Sidebar -->
+                <div class="lg:col-span-1">
+                <!-- Project Info -->
+                <div class="bg-white p-6 rounded-xl shadow-md sticky top-24">
+                    <h2 class="text-xl font-bold mb-4 text-gray-800">Project Details</h2>
+        
+                    <div class="mb-6">
+                    <h3 class="font-semibold text-gray-700">Client</h3>
+                    <p class="text-gray-600">University HR Department</p>
+                    </div>
+        
+                    <div class="mb-6">
+                    <h3 class="font-semibold text-gray-700">Timeline</h3>
+                    <p class="text-gray-600">March 2023 – July 2023</p>
+                    </div>
+        
+                    <div class="mb-6">
+                    <h3 class="font-semibold text-gray-700">My Role</h3>
+                    <p class="text-gray-600">Backend & Frontend Developer</p>
+                    </div>
+        
+                    <div class="mb-8">
+                    <h3 class="font-semibold text-gray-700 mb-2">Technologies</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Laravel</span>
+                        <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">MySQL</span>
+                        <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                        <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">TailwindCSS</span>
+                        <span class="tech-badge bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">AJAX</span>
+                    </div>
+                    </div>
+        
+                    <div class="flex flex-col space-y-3">
+                    <a href="#" class="bg-indigo-600 text-white text-center py-3 rounded-lg font-medium hover:bg-indigo-700 transition-colors">
+                        <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                    </a>
+                    <a href="#" class="border border-gray-300 text-gray-700 text-center py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+                        <i class="fab fa-github mr-2"></i>View Code
+                    </a>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+
+    </main>
+
+        <!-- Call to Action -->
+        <section class="py-16 bg-indigo-50 dark:bg-gray-800">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-200">Interested in working together?</h2>
+                <a href="index.html#contact" class="inline-block bg-indigo-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-indigo-700 transition-colors">
+                    Get in Touch
+                </a>
+            </div>
+        </section>
+
+</main>
+
+<!-- Include footer layout -->
+<!-- ==================== Footer ==================== -->
+<footer class="bg-gray-800 dark:bg-gray-900 text-gray-300 py-12">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row md:justify-between md:items-start space-y-8 md:space-y-0">
+            <!-- Branding -->
+            <div class="text-center md:text-left">
+                <a href="#" class="text-2xl font-bold text-white">
+                <span class="text-secondary-light dark:text-secondary-dark">P</span>ortfolio
+                </a>
+                <p class="mt-2 text-sm">© 2025 md khademul islam. All rights reserved.</p>
+            </div>
+
+            <!-- Email -->
+            <div class="text-center md:text-left">
+                <h3 class="text-lg font-semibold mb-2">Email</h3>
+                <p class="text-gray-400 break-all">khademulislam1080@gmail.com</p>
+            </div>
+
+            <!-- Contact & Social -->
+            <div class="flex flex-col items-center md:items-end text-center md:text-right">
+                <h3 class="text-lg font-semibold mb-2">Contact</h3>
+                <div class="flex flex-wrap justify-center md:justify-end gap-4 mb-4">
+                <a href="https://github.com/khademul-menaliam" class="hover:text-white transition duration-300">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/khademul-islam-a46915233/" class="hover:text-white transition duration-300">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://x.com/" class="hover:text-white transition duration-300">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.youtube.com/" class="hover:text-white transition duration-300">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                </div>
+
+                <div class="flex flex-wrap justify-center md:justify-end gap-4 text-sm">
+                <a href="#" class="hover:text-white transition duration-300">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition duration-300">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- ==================== End Footer ==================== -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const hash = window.location.hash.substring(1); // "project1"
+        const projectTitle = document.querySelector('.project-hero h1');
+        const projectDesc = document.querySelector('.project-hero p');
+              // mapping for project titles
+      const projectTitles = {
+        project1: "E-Comerce Platform",
+        project2: "Analytics Dashboard",
+        project3: "Task Management App",
+        project4: "Portfolio Website Platform",
+        project5: "CRM System",
+        project6: "Attendance Management System"
+      };
+        // Add delay to description animation
+              setTimeout(() => {
+            projectDesc.classList.add('animate-fade-in');
+        }, 300);
+                // Cache frequently used elements
+                const html = document.documentElement;
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const moonIcon = document.getElementById('moon-icon');
+        const sunIcon = document.getElementById('sun-icon');
+        const eyeToggle = document.getElementById('eye-comfort-toggle');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+              // ---------------------- Theme initialization ----------------------
+              function updateEyeComfortVisibility() {
+            if (html.classList.contains('dark')) {
+                eyeToggle.classList.add('hidden');
+                html.classList.remove('eye-comfort');
+            } else {
+                eyeToggle.classList.remove('hidden');
+            }
+        }
+
+        function updateThemeIcons() {
+            if (html.classList.contains('dark')) {
+                moonIcon.classList.remove('hidden');
+                sunIcon.classList.add('hidden');
+            } else {
+                moonIcon.classList.add('hidden');
+                sunIcon.classList.remove('hidden');
+            }
+        }
+
+        function initializeTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                html.classList.add('dark');
+            } else {
+                html.classList.remove('dark');
+            }
+
+            updateEyeComfortVisibility();
+
+            // Restore eye-comfort in light mode only
+            if (!html.classList.contains('dark') && localStorage.getItem('eye-comfort') === 'on') {
+                html.classList.add('eye-comfort');
+            }
+
+            updateThemeIcons();
+        }
+
+        initializeTheme();
+
+        // Respect system preference only if user hasn't chosen a theme
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (!localStorage.getItem('theme')) {
+                if (e.matches) {
+                    html.classList.add('dark');
+                } else {
+                    html.classList.remove('dark');
+                }
+                updateEyeComfortVisibility();
+                updateThemeIcons();
+            }
+        });
+
+        // ---------------------- Theme toggle button ----------------------
+        themeToggleBtn.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+            updateEyeComfortVisibility();
+            updateThemeIcons();
+            themeToggleBtn.style.transform = 'scale(0.95)';
+            setTimeout(() => themeToggleBtn.style.transform = 'scale(1)', 150);
+        });
+
+        // ---------------------- Eye comfort toggle (light mode only) ----------------------
+        eyeToggle.addEventListener('click', () => {
+            if (!html.classList.contains('dark')) {
+                html.classList.toggle('eye-comfort');
+                localStorage.setItem('eye-comfort', html.classList.contains('eye-comfort') ? 'on' : 'off');
+            }
+        });
+
+        // ---------------------- Mobile menu ----------------------
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // ---------------------- Active nav link highlight ----------------------
+        const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+
+        function setActiveByHref(targetHref) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            if (!targetHref) return;
+            navLinks.filter(link => link.getAttribute('href') === targetHref)
+                    .forEach(link => link.classList.add('active'));
+        }
+
+        function updateActiveNavLink() {
+            const currentPath = window.location.pathname;
+            const currentPage = currentPath.split('/').pop();
+            const currentHash = window.location.hash;
+
+            // If a section hash exists, prefer it; otherwise default to Home on root pages
+            if (currentHash) {
+                setActiveByHref(currentHash);
+            } else if (currentPath === '/' || currentPage === '' || currentPage === 'index.html' || currentPage === 'index.html') {
+                setActiveByHref('index.html');
+            } else {
+                setActiveByHref(null);
+            }
+        }
+
+        updateActiveNavLink();
+        window.addEventListener('hashchange', updateActiveNavLink);
+        if (hash) {
+            // Hide all
+            document.querySelectorAll(".project").forEach(sec => sec.classList.add("hidden"));
+
+            // Show all that match hash
+            document.querySelectorAll(`.${hash}`).forEach(sec => {
+            sec.classList.remove("hidden");
+            sec.classList.add("block"); // force visible
+            });
+            document.title = projectTitles[hash] || "My Portfolio";
+        }else {
+        // If no hash, show default
+        document.title = "My Portfolio – Home";
+      }
+        });
+</script>
+       
+</body>
+</html>

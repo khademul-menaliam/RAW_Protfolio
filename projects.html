@@ -1,0 +1,756 @@
+   
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <meta http-equiv="X-UA-Compatible" content="ie=edge">
+       <title>Projects</title>
+   
+       <link rel="stylesheet" href="assets/styles.css">
+   
+           <!-- Favicon -->
+       <link rel="icon" type="image/png" href="assets/favicon.png">
+       <!-- or if .ico
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">  -->
+   
+       <!-- Tailwind CSS CDN -->
+       <script src="https://cdn.tailwindcss.com"></script>
+       <script>
+           tailwind.config = {
+               darkMode: 'class',
+               theme: {
+                   extend: {
+                       colors: {
+                           primary: {
+                               light: '#3b82f6',
+                               dark: '#2563eb'
+                           },
+                           secondary: {
+                               light: '#10b981',
+                               dark: '#059669'
+                           }
+                       },
+                       animation: {
+                           'spin-slow': 'spin 8s linear infinite',
+                           'float': 'float 6s ease-in-out infinite',
+                       },
+                       keyframes: {
+                           float: {
+                               '0%, 100%': { transform: 'translateY(0)' },
+                               '50%': { transform: 'translateY(-20px)' },
+                           }
+                       }
+                   }
+               }
+           }
+       </script>
+   
+       <!-- Custom CSS -->
+       <!-- Local stylesheet (replace or remove if not needed) -->
+       
+   
+       <!-- Font Awesome CDN for icons -->
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
+       <!-- Google Fonts -->
+       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   
+       <!-- AOS Animations -->
+       <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+       <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+   
+       <!-- Alpine.js for interactivity -->
+       <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+   
+   </head>
+   <body class="min-h-screen flex flex-col">
+   
+       <!-- Include header layout -->
+       <!-- ==================== Header/Navigation ==================== -->
+       <header  class="fixed w-full z-50 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md shadow-sm">
+           <div class="container mx-auto px-6 py-4">
+               <div class="flex justify-between items-center">
+                   <a href="#" class="text-2xl font-bold text-primary-light dark:text-primary-dark">
+                       <span class="text-secondary-light dark:text-secondary-dark">P</span>ortfolio
+                   </a>
+           
+                   <div class="flex items-center space-x-6">
+                       <nav class="hidden md:flex space-x-8">
+                           <a href="index.html" class="nav-link active">Home</a>
+                           <a href="index.html#about" class="nav-link">About</a>
+                           <a href="index.html#skills" class="nav-link">Skills</a>
+                           <a href="projects.html" class="nav-link">Projects</a>
+                           <a href="index.html#contact" class="nav-link">Contact</a>
+                           <!-- download cv -->
+                        <a href="assets/cv.pdf" download="CV_Khademul_Islam.pdf"> Download CV </a>
+                       </nav>
+           
+                       <button id="theme-toggle" class="p-2 rounded-full focus:outline-none hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-200">
+                           <i id="moon-icon" class="fas fa-moon text-gray-700 dark:text-yellow-300 hidden dark:block"></i>
+                           <i id="sun-icon" class="fas fa-sun text-gray-700 dark:text-yellow-300 block dark:hidden"></i>
+                       </button>
+           
+                      <button id="eye-comfort-toggle" class="px-2 py-1 border rounded hidden">
+                       Eye Comfort
+                       </button>
+           
+           
+           
+           
+                       <button id="mobile-menu-button" class="md:hidden p-2 rounded-full focus:outline-none">
+                           <i class="fas fa-bars text-xl"></i>
+                       </button>
+                   </div>
+               </div>
+           </div>
+           
+           <!-- Mobile Menu -->
+           <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg">
+               <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+                   <a href="index.html" class="nav-link active">Home</a>
+                   <a href="index.html#about" class="nav-link">About</a>
+                   <a href="index.html#skills" class="nav-link">Skills</a>
+                   <a href="projects.HTML" class="nav-link">Projects</a>
+                   <a href="index.html#contact" class="nav-link">Contact</a>
+                   <!-- download cv -->
+                   <a href="assets/cv.pdf" download="CV_Khademul_Islam.pdf"> Download CV </a>
+               </div>
+           </div>
+   
+       </header>
+       <!-- ==================== End Header/Navigation ==================== -->
+       <!-- Header scripts are consolidated at the bottom for performance -->
+   
+       <!-- Main content section -->
+       <main class="flex-grow pt-24">
+      
+
+   <!-- ==================== Projects Section ==================== -->
+    <section id="projects" class="py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">My <span class="text-primary-light dark:text-primary-dark">Projects</span></h2>
+                <div class="w-20 h-1 bg-secondary-light dark:bg-secondary-dark mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300" data-page="1">
+
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Project 1"
+                                class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-primary-light dark:bg-primary-dark bg-opacity-80 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <a href="view.html#project1" class="text-white text-lg font-medium px-4 py-2 border-2 border-white rounded-lg hover:bg-white hover:text-primary-light dark:hover:text-primary-dark transition duration-300">
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">
+                            <a href="view.html#project1" class="hover:underline">
+                               E-commerce Platform
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            A full-featured online store with cart functionality, user authentication, and payment processing.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">React</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Node.js</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">MongoDB</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Stripe</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80"
+                                alt="Project 2"
+                                class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-primary-light dark:bg-primary-dark bg-opacity-80 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <a href="view.html#project2" class="text-white text-lg font-medium px-4 py-2 border-2 border-white rounded-lg hover:bg-white hover:text-primary-light dark:hover:text-primary-dark transition duration-300">
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">
+                            <a href="view.html#project2" class="hover:underline">
+                               Analytics Dashboard
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Interactive data visualization dashboard with real-time updates and custom reporting.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">React</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">D3.js</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Express</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">WebSockets</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Project 3"
+                                class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-primary-light dark:bg-primary-dark bg-opacity-80 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <a href="view.html#project3" class="text-white text-lg font-medium px-4 py-2 border-2 border-white rounded-lg hover:bg-white hover:text-primary-light dark:hover:text-primary-dark transition duration-300">
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">
+                            <a href="view.html#project3" class="hover:underline">
+                                Task Management App
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Collaborative task management system with drag-and-drop interface and team features.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Vue.js</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Firebase</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Real-time DB</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Auth</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Project 4"
+                                class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-primary-light dark:bg-primary-dark bg-opacity-80 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <a href="view.html#project4" class="text-white text-lg font-medium px-4 py-2 border-2 border-white rounded-lg hover:bg-white hover:text-primary-light dark:hover:text-primary-dark transition duration-300">
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">
+                                <a href="view.html#project4" class="hover:underline">
+                                    Portfolio Website Platform
+                                </a>
+                            </h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Niche social network with content sharing, messaging, and community features.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">React Native</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">GraphQL</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Node.js</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Project 5"
+                                class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-primary-light dark:bg-primary-dark bg-opacity-80 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <a href="view.html#project5" class="text-white text-lg font-medium px-4 py-2 border-2 border-white rounded-lg hover:bg-white hover:text-primary-light dark:hover:text-primary-dark transition duration-300">
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">
+                            <a href="view.html#project5" class="hover:underline">
+                                CRM System
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Custom customer relationship management solution for small businesses.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Angular</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">NestJS</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">PostgreSQL</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Docker</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Project 6"
+                                class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-primary-light dark:bg-primary-dark bg-opacity-80 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <a href="view.html#project6" class="text-white text-lg font-medium px-4 py-2 border-2 border-white rounded-lg hover:bg-white hover:text-primary-light dark:hover:text-primary-dark transition duration-300">
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">
+                            <a href="view.html#project6" class="hover:underline">
+                                Attendance Management System
+                            </a>
+                        </h3>
+
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            All-in-one solution for remote teams with video, chat, and document collaboration.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">React</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">WebRTC</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Node.js</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Redis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination Controls -->
+            <div class="flex justify-center items-center mt-12 space-x-2" id="pagination-controls">
+                <button id="prev-page" class="px-4 py-2 bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-400 dark:hover:bg-gray-500 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
+                    <i class="fas fa-chevron-left mr-2"></i>Previous
+                </button>
+                
+                <div class="flex space-x-1" id="page-numbers">
+                    <!-- Page buttons will be generated dynamically -->
+                </div>
+                
+                <button id="next-page" class="px-4 py-2 bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-400 dark:hover:bg-gray-500 transition duration-300">
+                    Next<i class="fas fa-chevron-right ml-2"></i>
+                </button>
+            </div>
+
+            <div  id="view-projects-btn"  class="text-center mt-12">
+                <a href="/projects" class="inline-block px-6 py-3 bg-primary-light dark:bg-primary-dark text-white rounded-lg font-medium hover:bg-opacity-90 transition duration-300">
+                    View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== End Projects Section ==================== -->
+
+    <!--  contact section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In <span class="text-primary-light dark:text-primary-dark">Touch</span></h2>
+                <div class="w-20 h-1 bg-secondary-light dark:bg-secondary-dark mx-auto"></div>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary-light dark:bg-primary-dark bg-opacity-10 dark:bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-primary-light dark:text-primary-dark"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Location</h4>
+                                <p class="text-gray-600 dark:text-gray-300">40 feet road, Mohammadpur Dhaka</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary-light dark:bg-primary-dark bg-opacity-10 dark:bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-primary-light dark:text-primary-dark"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Email</h4>
+                                <p class="text-gray-600 dark:text-gray-300">khademulislam1080@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary-light dark:bg-primary-dark bg-opacity-10 dark:bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-phone-alt text-primary-light dark:text-primary-dark"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Phone</h4>
+                                <p class="text-gray-600 dark:text-gray-300">+88 01641305021</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary-light dark:bg-primary-dark bg-opacity-10 dark:bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-clock text-primary-light dark:text-primary-dark"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Working Hours</h4>
+                                <p class="text-gray-600 dark:text-gray-300">Sun-Thu: 9AM - 8PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="font-semibold mb-4">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/khademul-menaliam" class="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary-light dark:hover:bg-primary-dark hover:text-white transition duration-300">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/khademul-islam-a46915233/" class="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://x.com/" class="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-400 hover:text-white transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.youtube.com/" class="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-red-500 hover:text-white transition duration-300">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="https://www.instagram.com/" class="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-pink-500 hover:text-white transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2">
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block mb-2 font-medium">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark focus:border-transparent bg-white dark:bg-gray-700">
+                            </div>
+                            <div>
+                                <label for="email" class="block mb-2 font-medium">Your Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark focus:border-transparent bg-white dark:bg-gray-700">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="subject" class="block mb-2 font-medium">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark focus:border-transparent bg-white dark:bg-gray-700">
+                        </div>
+
+                        <div>
+                            <label for="message" class="block mb-2 font-medium">Your Message</label>
+                            <textarea id="message" rows="6" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark focus:border-transparent bg-white dark:bg-gray-700"></textarea>
+                        </div>
+                        <!-- Button -->
+                        <button type="button" id="send-message-btn"
+                                class="px-6 py-3 bg-primary-light dark:bg-primary-dark text-white rounded-lg font-medium hover:bg-opacity-90 transition duration-300 w-full md:w-auto">
+                            Send Message
+                        </button>
+                        <p id="warning-msg" class="mt-2 hidden">
+                            <span class="text-red-500">⚠️ Something went wrong.</span><br>
+                            Call the number or email for a quick response.
+                        </p>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Include footer layout -->
+<!-- ==================== Footer ==================== -->
+<footer class="bg-gray-800 dark:bg-gray-900 text-gray-300 py-12">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row md:justify-between md:items-start space-y-8 md:space-y-0">
+            <!-- Branding -->
+            <div class="text-center md:text-left">
+                <a href="#" class="text-2xl font-bold text-white">
+                <span class="text-secondary-light dark:text-secondary-dark">P</span>ortfolio
+                </a>
+                <p class="mt-2 text-sm">© 2025 md khademul islam. All rights reserved.</p>
+            </div>
+
+            <!-- Email -->
+            <div class="text-center md:text-left">
+                <h3 class="text-lg font-semibold mb-2">Email</h3>
+                <p class="text-gray-400 break-all">khademulislam1080@gmail.com</p>
+            </div>
+
+            <!-- Contact & Social -->
+            <div class="flex flex-col items-center md:items-end text-center md:text-right">
+                <h3 class="text-lg font-semibold mb-2">Contact</h3>
+                <div class="flex flex-wrap justify-center md:justify-end gap-4 mb-4">
+                <a href="https://github.com/khademul-menaliam" class="hover:text-white transition duration-300">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/khademul-islam-a46915233/" class="hover:text-white transition duration-300">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://x.com/" class="hover:text-white transition duration-300">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.youtube.com/" class="hover:text-white transition duration-300">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                </div>
+
+                <div class="flex flex-wrap justify-center md:justify-end gap-4 text-sm">
+                <a href="#" class="hover:text-white transition duration-300">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition duration-300">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- ==================== End Footer ==================== -->
+
+<script>
+    function updateViewProjectsVisibility() {
+        const viewProjects = document.getElementById('view-projects-btn');
+        const currentPath = window.location.pathname;
+    
+        // Show only if Home page is active (assuming "/" is Home)
+        if (currentPath === '/') {
+            viewProjects.classList.remove('hidden');
+        } else {
+            viewProjects.classList.add('hidden');
+        }
+    }
+    
+    // Call this on page load
+    document.addEventListener('DOMContentLoaded', updateViewProjectsVisibility);
+    
+    // Optional: run immediately if DOM is already loaded
+    if (document.readyState !== 'loading') {
+        updateViewProjectsVisibility();
+    }
+    </script>
+    
+    <!-- Pagination Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const projectsGrid = document.getElementById('projects-grid');
+            const projectCards = document.querySelectorAll('.project-card');
+            const pageNumbersContainer = document.getElementById('page-numbers');
+            const prevButton = document.getElementById('prev-page');
+            const nextButton = document.getElementById('next-page');
+            // Cache frequently used elements
+            const html = document.documentElement;
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const moonIcon = document.getElementById('moon-icon');
+            const sunIcon = document.getElementById('sun-icon');
+            const eyeToggle = document.getElementById('eye-comfort-toggle');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+                
+                    // ---------------------- Theme initialization ----------------------
+        function updateEyeComfortVisibility() {
+            if (html.classList.contains('dark')) {
+                eyeToggle.classList.add('hidden');
+                html.classList.remove('eye-comfort');
+            } else {
+                eyeToggle.classList.remove('hidden');
+            }
+        }
+
+        function updateThemeIcons() {
+            if (html.classList.contains('dark')) {
+                moonIcon.classList.remove('hidden');
+                sunIcon.classList.add('hidden');
+            } else {
+                moonIcon.classList.add('hidden');
+                sunIcon.classList.remove('hidden');
+            }
+        }
+
+        function initializeTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                html.classList.add('dark');
+            } else {
+                html.classList.remove('dark');
+            }
+
+            updateEyeComfortVisibility();
+
+            // Restore eye-comfort in light mode only
+            if (!html.classList.contains('dark') && localStorage.getItem('eye-comfort') === 'on') {
+                html.classList.add('eye-comfort');
+            }
+
+            updateThemeIcons();
+        }
+
+        initializeTheme();
+
+        // Respect system preference only if user hasn't chosen a theme
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (!localStorage.getItem('theme')) {
+                if (e.matches) {
+                    html.classList.add('dark');
+                } else {
+                    html.classList.remove('dark');
+                }
+                updateEyeComfortVisibility();
+                updateThemeIcons();
+            }
+        });
+
+        // ---------------------- Theme toggle button ----------------------
+        themeToggleBtn.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+            updateEyeComfortVisibility();
+            updateThemeIcons();
+            themeToggleBtn.style.transform = 'scale(0.95)';
+            setTimeout(() => themeToggleBtn.style.transform = 'scale(1)', 150);
+        });
+
+        // ---------------------- Eye comfort toggle (light mode only) ----------------------
+        eyeToggle.addEventListener('click', () => {
+            if (!html.classList.contains('dark')) {
+                html.classList.toggle('eye-comfort');
+                localStorage.setItem('eye-comfort', html.classList.contains('eye-comfort') ? 'on' : 'off');
+            }
+        });
+
+        // ---------------------- Mobile menu ----------------------
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // ---------------------- Active nav link highlight ----------------------
+        const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+
+        function setActiveByHref(targetHref) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            if (!targetHref) return;
+            navLinks.filter(link => link.getAttribute('href') === targetHref)
+                    .forEach(link => link.classList.add('active'));
+        }
+
+        function updateActiveNavLink() {
+            const currentPath = window.location.pathname;
+            const currentPage = currentPath.split('/').pop();
+            const currentHash = window.location.hash;
+
+            // If a section hash exists, prefer it; otherwise default to Home on root pages
+            if (currentHash) {
+                setActiveByHref(currentHash);
+            } else if (currentPath === '/' || currentPage === '' || currentPage === 'index.html' || currentPage === 'index.html') {
+                setActiveByHref('index.html');
+            } else {
+                setActiveByHref(null);
+            }
+        }
+
+        updateActiveNavLink();
+        window.addEventListener('hashchange', updateActiveNavLink);
+        
+            let currentPage = 1;
+            const projectsPerPage = 6; // Show 3 projects per page for better UX
+            let totalPages = Math.ceil(projectCards.length / projectsPerPage);
+            let pageButtons = [];
+            
+            // Generate pagination buttons dynamically
+            function generatePaginationButtons() {
+                pageNumbersContainer.innerHTML = '';
+                pageButtons = [];
+                
+                for (let i = 1; i <= totalPages; i++) {
+                    const button = document.createElement('button');
+                    button.className = 'page-btn px-3 py-2 bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-400 dark:hover:bg-gray-500 transition duration-300';
+                    button.setAttribute('data-page', i);
+                    button.textContent = i;
+                    
+                    // Add click event listener
+                    button.addEventListener('click', function() {
+                        const pageNumber = parseInt(this.getAttribute('data-page'));
+                        showPage(pageNumber);
+                    });
+                    
+                    pageNumbersContainer.appendChild(button);
+                    pageButtons.push(button);
+                }
+            }
+            
+            // Initialize pagination
+            function initPagination() {
+                generatePaginationButtons();
+                showPage(1);
+                updatePaginationButtons();
+            }
+            
+            // Show specific page
+            function showPage(pageNumber) {
+                currentPage = pageNumber;
+                
+                // Hide all projects
+                projectCards.forEach(card => {
+                    card.style.display = 'none';
+                });
+                
+                // Show projects for current page
+                const startIndex = (pageNumber - 1) * projectsPerPage;
+                const endIndex = startIndex + projectsPerPage;
+                
+                for (let i = startIndex; i < endIndex && i < projectCards.length; i++) {
+                    projectCards[i].style.display = 'block';
+                }
+                
+                // Update page button styles
+                pageButtons.forEach(btn => {
+                    const btnPage = parseInt(btn.getAttribute('data-page'));
+                    if (btnPage === pageNumber) {
+                        btn.classList.remove('bg-gray-300', 'dark:bg-gray-600', 'text-gray-700', 'dark:text-gray-300');
+                        btn.classList.add('bg-primary-light', 'dark:bg-primary-dark', 'text-white');
+                    } else {
+                        btn.classList.remove('bg-primary-light', 'dark:bg-primary-dark', 'text-white');
+                        btn.classList.add('bg-gray-300', 'dark:bg-gray-600', 'text-gray-700', 'dark:text-gray-300');
+                    }
+                });
+                
+                updatePaginationButtons();
+            }
+            
+            // Update navigation button states
+            function updatePaginationButtons() {
+                prevButton.disabled = currentPage === 1;
+                nextButton.disabled = currentPage === totalPages;
+                
+                if (currentPage === 1) {
+                    prevButton.classList.add('opacity-50', 'cursor-not-allowed');
+                } else {
+                    prevButton.classList.remove('opacity-50', 'cursor-not-allowed');
+                }
+                
+                if (currentPage === totalPages) {
+                    nextButton.classList.add('opacity-50', 'cursor-not-allowed');
+                } else {
+                    nextButton.classList.remove('opacity-50', 'cursor-not-allowed');
+                }
+            }
+            
+            // Event listeners for navigation buttons
+            prevButton.addEventListener('click', function() {
+                if (currentPage > 1) {
+                    showPage(currentPage - 1);
+                }
+            });
+            
+            nextButton.addEventListener('click', function() {
+                if (currentPage < totalPages) {
+                    showPage(currentPage + 1);
+                }
+            });
+            
+            // Initialize pagination on page load
+            initPagination();
+        });
+    </script>
+    
+</body>
+</html>

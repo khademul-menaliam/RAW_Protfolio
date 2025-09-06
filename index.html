@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portfolio of Khademul</title>
+
+    <link rel="stylesheet" href="assets/styles.css">
+
+        <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <!-- or if .ico
+     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">  -->
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            light: '#3b82f6',
+                            dark: '#2563eb'
+                        },
+                        secondary: {
+                            light: '#10b981',
+                            dark: '#059669'
+                        }
+                    },
+                    animation: {
+                        'spin-slow': 'spin 8s linear infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <!-- Local stylesheet (replace or remove if not needed) -->
+    
+
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- AOS Animations -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+
+    <!-- Alpine.js for interactivity -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Include header layout -->
+    <!-- ==================== Header/Navigation ==================== -->
+    <header  class="fixed w-full z-50 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-primary-light dark:text-primary-dark">
+                    <span class="text-secondary-light dark:text-secondary-dark">P</span>ortfolio
+                </a>
+        
+                <div class="flex items-center space-x-6">
+                    <nav class="hidden md:flex space-x-8">
+                        <a href="index.html" class="nav-link active">Home</a>
+                        <a href="#about" class="nav-link">About</a>
+                        <a href="#skills" class="nav-link">Skills</a>
+                        <a href="#projects" class="nav-link">Projects</a>
+                        <a href="#contact" class="nav-link">Contact</a>
+                        <!-- download cv -->
+                        <a href="assets/cv.pdf" download="CV_Khademul_Islam.pdf"> Download CV </a>
+                    </nav>
+        
+                    <button id="theme-toggle" class="p-2 rounded-full focus:outline-none hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-200">
+                        <i id="moon-icon" class="fas fa-moon text-gray-700 dark:text-yellow-300 hidden dark:block"></i>
+                        <i id="sun-icon" class="fas fa-sun text-gray-700 dark:text-yellow-300 block dark:hidden"></i>
+                    </button>
+        
+                   <button id="eye-comfort-toggle" class="px-2 py-1 border rounded hidden">
+                    Eye Comfort
+                    </button>
+        
+        
+        
+        
+                    <button id="mobile-menu-button" class="md:hidden p-2 rounded-full focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg">
+            <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#skills" class="nav-link">Skills</a>
+                <a href="index.html#projects" class="nav-link">Projects</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+                <!-- download cv -->
+                <a href="assets/cv.pdf" download="CV_Khademul_Islam.pdf"> Download CV </a>
+            </div>
+        </div>
+
+    </header>
+    <!-- ==================== End Header/Navigation ==================== -->
+    <!-- Header scripts are consolidated at the bottom for performance -->
+
+    <!-- Main content section -->
+    <main class="flex-grow pt-24">
+    <!-- hero section -->
+    <section id="home" class="min-h-screen flex items-center pt-20">
+
+        <div class="container mx-auto px-6 py-12 md:py-24 relative z-10 flex flex-col md:flex-row items-center">
+            <!-- Left side (Intro text) -->
+            <div class="md:w-1/2 mb-12 md:mb-0 text-center md:text-left" data-aos="fade-up">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                    Hi, I'm <span class="text-primary-light dark:text-primary-dark">Khademul Islam</span>
+                </h1>
+                <h2 class="text-2xl md:text-3xl font-semibold mb-6">
+                    <span class="text-secondary-light dark:text-secondary-dark">Web</span> Developer
+                </h2>
+                <p class="text-lg mb-8 text-gray-700 dark:text-gray-300 max-w-lg mx-auto md:mx-0">
+                    I build exceptional digital experiences that are fast, accessible, and visually appealing.
+                </p>
+                <div class="flex justify-center md:justify-start space-x-4">
+                    <a href="#contact"
+                        class="bg-primary-light dark:bg-primary-dark text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition duration-300">
+                        Hire Me
+                    </a>
+                    <a href="#projects"
+                        class="border-2 border-primary-light dark:border-primary-dark text-primary-light dark:text-primary-dark px-6 py-3 rounded-lg font-medium hover:bg-primary-light dark:hover:bg-primary-dark hover:bg-opacity-10 transition duration-300">
+                        View Work
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right side (Floating profile image) -->
+            <div class="md:w-1/2 flex justify-center" data-aos="fade-in">
+                <div class="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+                    <!-- Pulsing circles -->
+                    <div class="absolute inset-0 bg-primary-light dark:bg-primary-dark rounded-full opacity-20 animate-pulse"></div>
+                    <div class="absolute inset-4 bg-secondary-light dark:bg-secondary-dark rounded-full opacity-20 animate-pulse delay-300"></div>
+
+                    <!-- Profile image -->
+                    <div class="absolute inset-8 bg-white dark:bg-gray-800 rounded-full overflow-hidden border-4 sm:border-8 md:border-8 border-white dark:border-gray-800 shadow-xl">
+                        <img src="assets/images/1756624740955.jpg"
+                                alt="Profile"
+                                class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- Floating code icon -->
+                    <div class="absolute -bottom-4 -right-4 bg-white dark:bg-gray-800 p-3 sm:p-4 rounded-full shadow-lg">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-primary-light dark:bg-primary-dark rounded-full flex items-center justify-center text-white">
+                            <i class="fas fa-code text-xl sm:text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== About Section ==================== -->
+    <section id="about" class="py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">About <span class="text-primary-light dark:text-primary-dark">Me</span></h2>
+                <div class="w-20 h-1 bg-secondary-light dark:bg-secondary-dark mx-auto"></div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                    <div class="relative w-64 h-64 rounded-full overflow-hidden border-4 border-primary-light dark:border-primary-dark shadow-lg">
+                        <img src="assets/images/about.jpg" alt="About Me"  class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <div class="md:w-2/3 md:pl-12">
+                    <h3 class="text-2xl font-semibold mb-4">Who am I?</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        I’m <strong>Khademul islam</strong>, a junior web developer with a foundation in
+                        <strong>PHP, Laravel and MySQL</strong> .<br>
+                        I’ve built hands-on projects like <strong>portfolio sites, task management apps, dashboards and attendance systems</strong>, gaining experience in
+                        <strong>backend development, database design, and authentication</strong>.<br>
+                        I’m eager to contribute to real-world projects and grow as a <strong>full-stack developer</strong>.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <h4 class="font-semibold mb-2 flex items-center">
+                                <i class="fas fa-user mr-2 text-primary-light dark:text-primary-dark"></i>
+                                Personal Info
+                            </h4>
+                            <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+                                <li><span class="font-medium">Name:</span> Md Khademul islam</li>
+                                <li><span class="font-medium">Email:</span> khademulislam1080@gmail.com</li>
+                                <li><span class="font-medium">Phone:</span> +18801641305021</li>
+                                <li><span class="font-medium">Address:</span> 40 Feet Road, Mohammadpur Dhaka, Bangladesh</li>
+                                <li><span class="bg-green-300 text-black px-2 py-1 rounded text-sm font-medium">Open for Full-Time</span></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="font-semibold mb-2 flex items-center">
+                                <i class="fas fa-briefcase mr-2 text-primary-light dark:text-primary-dark"></i>
+                                Certifications & Training
+                            </h4>
+                            <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+                                <li class="flex justify-between items-start md:items-center border-l-4 border-primary-light dark:border-primary-dark pl-4 py-2">
+                                    <span class="font-medium text-gray-800 dark:text-gray-100">Professional Web Developer</span>
+                                    <span class="text-gray-600 dark:text-gray-300 text-right">Industrial Training, Creative IT Institute</span>
+                                </li>
+                                <li class="flex justify-between items-start md:items-center border-l-4 border-primary-light dark:border-primary-dark pl-4 py-2">
+                                    <span class="font-medium text-gray-800 dark:text-gray-100">B.Sc. in Computer Science & Engineering</span>
+                                    <span class="text-gray-600 dark:text-gray-300 text-right">Dhaka International University, 2025</span>
+                                </li>
+                                <li class="flex justify-between items-start md:items-center border-l-4 border-primary-light dark:border-primary-dark pl-4 py-2">
+                                    <span class="font-medium text-gray-800 dark:text-gray-100">Diploma in Computer Technology</span>
+                                    <span class="text-gray-600 dark:text-gray-300 text-right">Cox's Bazar Polytechnic Institute</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://github.com/khademul-menaliam" class="flex items-center px-4 py-2 bg-gray-400 dark:bg-gray-700 rounded-lg">
+                            <i class="fab fa-github mr-2"></i> GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/khademul-islam-a46915233/" class="flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg">
+                            <i class="fab fa-linkedin mr-2"></i> LinkedIn
+                        </a>
+                        <a href="https://x.com/" class="flex items-center px-4 py-2 bg-blue-400 text-white rounded-lg">
+                            <i class="fab fa-twitter mr-2"></i> Twitter
+                        </a>
+                        <a href="https://www.instagram.com/" class="flex items-center px-4 py-2 bg-blue-400 text-white rounded-lg">
+                            <i class="fab fa-instagram mr-2"></i> Instagram
+                        </a>
+                        <a href="assets/cv.pdf" download="CV_Khademul_Islam.pdf"
+                        class="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-800 transition">
+                            <i class="fas fa-download mr-2"></i> Download CV
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== End About Section ==================== -->
+
+    <!-- ==================== Skills Section ==================== -->
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">My <span class="text-primary-light dark:text-primary-dark">Skills</span></h2>
+                <div class="w-20 h-1 bg-secondary-light dark:bg-secondary-dark mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Technical Skills</h3>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Skill Item -->
+                    <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="font-semibold text-gray-800 dark:text-gray-100">HTML/CSS</span>
+                        <span class="text-gray-600 dark:text-gray-300">75%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
+                        <div class="bg-gradient-to-r from-green-400 to-blue-500 h-3 rounded-full transition-all duration-1000 ease-in-out" style="width: 75%;"></div>
+                    </div>
+                    </div>
+
+                    <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="font-semibold text-gray-800 dark:text-gray-100">PHP</span>
+                        <span class="text-gray-600 dark:text-gray-300">70%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
+                        <div class="bg-gradient-to-r from-yellow-400 to-orange-500 h-3 rounded-full transition-all duration-1000 ease-in-out" style="width: 70%;"></div>
+                    </div>
+                    </div>
+
+                    <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="font-semibold text-gray-800 dark:text-gray-100">Laravel</span>
+                        <span class="text-gray-600 dark:text-gray-300">65%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
+                        <div class="bg-gradient-to-r from-yellow-400 to-orange-500 h-3 rounded-full transition-all duration-1000 ease-in-out" style="width: 65%;"></div>
+                    </div>
+                    </div>
+
+                    <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="font-semibold text-gray-800 dark:text-gray-100">MySQL</span>
+                        <span class="text-gray-600 dark:text-gray-300">65%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
+                        <div class="bg-gradient-to-r from-blue-400 to-purple-500 h-3 rounded-full transition-all duration-1000 ease-in-out" style="width: 65%;"></div>
+                    </div>
+                    </div>
+
+                    <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="font-semibold text-gray-800 dark:text-gray-100">C</span>
+                        <span class="text-gray-600 dark:text-gray-300">80%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
+                        <div class="bg-gradient-to-r from-green-500 to-teal-500 h-3 rounded-full transition-all duration-1000 ease-in-out" style="width: 80%;"></div>
+                    </div>
+                    </div>
+                    </div>
+
+
+                </div>
+
+                <!-- <div>
+                    <h3 class="text-2xl font-semibold mb-6">Professional Skills</h3>
+
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                            <div class="w-12 h-12 bg-primary-light dark:bg-primary-dark bg-opacity-10 dark:bg-opacity-20 rounded-full flex items-center justify-center mb-4">
+                                <i class="fas fa-comments text-primary-light dark:text-primary-dark text-xl"></i>
+                            </div>
+                            <h4 class="font-semibold mb-2">Communication</h4>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">
+                                Effective communication with team members and clients.
+                            </p>
+                        </div>
+
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                            <div class="w-12 h-12 bg-secondary-light dark:bg-secondary-dark bg-opacity-10 dark:bg-opacity-20 rounded-full flex items-center justify-center mb-4">
+                                <i class="fas fa-users text-secondary-light dark:text-secondary-dark text-xl"></i>
+                            </div>
+                            <h4 class="font-semibold mb-2">Team Work</h4>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">
+                                Collaborative approach to problem solving.
+                            </p>
+                        </div>
+
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                            <div class="w-12 h-12 bg-primary-light dark:bg-primary-dark bg-opacity-10 dark:bg-opacity-20 rounded-full flex items-center justify-center mb-4">
+                                <i class="fas fa-lightbulb text-primary-light dark:text-primary-dark text-xl"></i>
+                            </div>
+                            <h4 class="font-semibold mb-2">Creativity</h4>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">
+                                Innovative solutions to complex problems.
+                            </p>
+                        </div>
+
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                            <div class="w-12 h-12 bg-secondary-light dark:bg-secondary-dark bg-opacity-10 dark:bg-opacity-20 rounded-full flex items-center justify-center mb-4">
+                                <i class="fas fa-project-diagram text-secondary-light dark:text-secondary-dark text-xl"></i>
+                            </div>
+                            <h4 class="font-semibold mb-2">Project Management</h4>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">
+                                Organizing and managing projects efficiently.
+                            </p>
+                        </div>
+                    </div>
+                </div>  -->
+            </div>
+
+            <div class="mt-16">
+                <h3 class="text-2xl font-semibold mb-6 text-center">Tools & Technologies</h3>
+
+                <div class="flex flex-wrap justify-center gap-6">
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-md flex items-center justify-center mb-2">
+                            <i class="fab fa-html5 text-3xl text-orange-500"></i>
+                        </div>
+                        <span class="text-sm">HTML5</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-md flex items-center justify-center mb-2">
+                            <i class="fab fa-css3-alt text-3xl text-blue-500"></i>
+                        </div>
+                        <span class="text-sm">CSS3</span>
+                    </div>
+                    <!-- MySQL -->
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-md flex items-center justify-center mb-2">
+                            <i class="fas fa-database text-3xl text-blue-600"></i>
+                        </div>
+                        <span class="text-sm">MySQL</span>
+                    </div>
+
+                    <!-- XAMPP -->
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-md flex items-center justify-center mb-2">
+                            <img src="https://www.apachefriends.org/images/xampp-logo-ac950edf.svg" alt="XAMPP" class="w-8 h-8">
+                        </div>
+                        <span class="text-sm">XAMPP</span>
+                    </div>
+                    <!-- VS Code -->
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-md flex items-center justify-center mb-2">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" class="w-8 h-8">
+                        </div>
+                        <span class="text-sm">VS Code</span>
+                    </div>
+                    <!-- PhpStorm -->
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-md flex items-center justify-center mb-2">
+                            <img src="https://resources.jetbrains.com/storage/products/phpstorm/img/meta/phpstorm_logo_300x300.png" alt="PhpStorm" class="w-8 h-8">
+                        </div>
+                        <span class="text-sm">PhpStorm</span>
+                    </div>
+                    <!-- GitHub -->
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-md flex items-center justify-center mb-2">
+                            <i class="fab fa-github text-3xl text-gray-700 dark:text-white"></i>
+                        </div>
+                        <span class="text-sm">GitHub</span>
+                    </div>
+
+                      <!-- git bash -->
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-md flex items-center justify-center mb-2">
+                            <i class="fab fa-git-alt text-3xl text-orange-600"></i>
+                        </div>
+                        <span class="text-sm">Git</span>
+                    </div>
+
+<!--
+                     <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-md flex items-center justify-center mb-2">
+                            <i class="fab fa-js text-3xl text-yellow-400"></i>
+                        </div>
+                        <span class="text-sm">JavaScript</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-md flex items-center justify-center mb-2">
+                            <i class="fab fa-react text-3xl text-blue-400"></i>
+                        </div>
+                        <span class="text-sm">React</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-md flex items-center justify-center mb-2">
+                            <i class="fab fa-node-js text-3xl text-green-500"></i>
+                        </div>
+                        <span class="text-sm">Node.js</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-md flex items-center justify-center mb-2">
+                            <i class="fas fa-database text-3xl text-blue-600"></i>
+                        </div>
+                        <span class="text-sm">MongoDB</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-md flex items-center justify-center mb-2">
+                            <i class="fab fa-aws text-3xl text-orange-400"></i>
+                        </div>
+                        <span class="text-sm">AWS</span>
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== End Skills Section ==================== -->
+
+    <!-- ==================== Projects Section ==================== -->
+    <section id="projects" class="py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">My <span class="text-primary-light dark:text-primary-dark">Projects</span></h2>
+                <div class="w-20 h-1 bg-secondary-light dark:bg-secondary-dark mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Project 1"
+                                class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-primary-light dark:bg-primary-dark bg-opacity-80 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <a href="view.html#project1" class="text-white text-lg font-medium px-4 py-2 border-2 border-white rounded-lg hover:bg-white hover:text-primary-light dark:hover:text-primary-dark transition duration-300">
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">
+                            <a href="view.html#project1" class="hover:underline">
+                               E-commerce Platform
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            A full-featured online store with cart functionality, user authentication, and payment processing.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">HTML & CSS</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">js</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">MySQL</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Laravel</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80"
+                                alt="Project 2"
+                                class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-primary-light dark:bg-primary-dark bg-opacity-80 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <a href="view.html#project2" class="text-white text-lg font-medium px-4 py-2 border-2 border-white rounded-lg hover:bg-white hover:text-primary-light dark:hover:text-primary-dark transition duration-300">
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">
+                            <a href="view.html#project2" class="hover:underline">
+                               Analytics Dashboard
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Interactive data visualization dashboard with real-time updates and custom reporting.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">React</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">D3.js</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Express</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">WebSockets</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Project 3"
+                                class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-primary-light dark:bg-primary-dark bg-opacity-80 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <a href="view.html#project3" class="text-white text-lg font-medium px-4 py-2 border-2 border-white rounded-lg hover:bg-white hover:text-primary-light dark:hover:text-primary-dark transition duration-300">
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">
+                            <a href="view.html#project3" class="hover:underline">
+                                Task Management App
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Collaborative task management system with drag-and-drop interface and team features.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Vue.js</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Firebase</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Real-time DB</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Auth</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Project 4"
+                                class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-primary-light dark:bg-primary-dark bg-opacity-80 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <a href="view.html#project4" class="text-white text-lg font-medium px-4 py-2 border-2 border-white rounded-lg hover:bg-white hover:text-primary-light dark:hover:text-primary-dark transition duration-300">
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">
+                                <a href="view.html#project4" class="hover:underline">
+                                    Portfolio Website Platform
+                                </a>
+                            </h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Niche social network with content sharing, messaging, and community features.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">React Native</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">GraphQL</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Node.js</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Project 5"
+                                class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-primary-light dark:bg-primary-dark bg-opacity-80 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <a href="view.html#project5" class="text-white text-lg font-medium px-4 py-2 border-2 border-white rounded-lg hover:bg-white hover:text-primary-light dark:hover:text-primary-dark transition duration-300">
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">
+                            <a href="view.html#project5" class="hover:underline">
+                                CRM System
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Custom customer relationship management solution for small businesses.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Angular</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">NestJS</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">PostgreSQL</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Docker</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Project 6"
+                                class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-primary-light dark:bg-primary-dark bg-opacity-80 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <a href="view.html#project6" class="text-white text-lg font-medium px-4 py-2 border-2 border-white rounded-lg hover:bg-white hover:text-primary-light dark:hover:text-primary-dark transition duration-300">
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">
+                            <a href="view.html#project6" class="hover:underline">
+                                Attendance Management System
+                            </a>
+                        </h3>
+
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            All-in-one solution for remote teams with video, chat, and document collaboration.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">React</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">WebRTC</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Node.js</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Redis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div  id="view-projects-btn"  class="text-center mt-12">
+                <a href="projects.html" class="inline-block px-6 py-3 bg-primary-light dark:bg-primary-dark text-white rounded-lg font-medium hover:bg-opacity-90 transition duration-300">
+                    View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== End Projects Section ==================== -->
+    <!-- Projects visibility logic moved to consolidated script at the bottom -->
+
+
+            <!--  contact section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In <span class="text-primary-light dark:text-primary-dark">Touch</span></h2>
+                <div class="w-20 h-1 bg-secondary-light dark:bg-secondary-dark mx-auto"></div>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary-light dark:bg-primary-dark bg-opacity-10 dark:bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-primary-light dark:text-primary-dark"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Location</h4>
+                                <p class="text-gray-600 dark:text-gray-300">40 feet road, Mohammadpur Dhaka</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary-light dark:bg-primary-dark bg-opacity-10 dark:bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-primary-light dark:text-primary-dark"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Email</h4>
+                                <p class="text-gray-600 dark:text-gray-300">khademulislam1080@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary-light dark:bg-primary-dark bg-opacity-10 dark:bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-phone-alt text-primary-light dark:text-primary-dark"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Phone</h4>
+                                <p class="text-gray-600 dark:text-gray-300">+88 01641305021</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary-light dark:bg-primary-dark bg-opacity-10 dark:bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-clock text-primary-light dark:text-primary-dark"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Working Hours</h4>
+                                <p class="text-gray-600 dark:text-gray-300">Sun-Thu: 9AM - 8PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="font-semibold mb-4">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/khademul-menaliam" class="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary-light dark:hover:bg-primary-dark hover:text-white transition duration-300">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/khademul-islam-a46915233/" class="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://x.com/" class="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-400 hover:text-white transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.youtube.com/" class="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-red-500 hover:text-white transition duration-300">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="https://www.instagram.com/" class="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-pink-500 hover:text-white transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2">
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block mb-2 font-medium">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark focus:border-transparent bg-white dark:bg-gray-700">
+                            </div>
+                            <div>
+                                <label for="email" class="block mb-2 font-medium">Your Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark focus:border-transparent bg-white dark:bg-gray-700">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="subject" class="block mb-2 font-medium">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark focus:border-transparent bg-white dark:bg-gray-700">
+                        </div>
+
+                        <div>
+                            <label for="message" class="block mb-2 font-medium">Your Message</label>
+                            <textarea id="message" rows="6" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark focus:border-transparent bg-white dark:bg-gray-700"></textarea>
+                        </div>
+                        <!-- Button -->
+                        <button type="button" id="send-message-btn"
+                                class="px-6 py-3 bg-primary-light dark:bg-primary-dark text-white rounded-lg font-medium hover:bg-opacity-90 transition duration-300 w-full md:w-auto">
+                            Send Message
+                        </button>
+                        <p id="warning-msg" class="mt-2 hidden">
+                            <span class="text-red-500">⚠️ Something went wrong.</span><br>
+                            Call the number or email for a quick response.
+                        </p>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact button logic moved to consolidated script at the bottom -->
+
+    </main>
+
+    <!-- Include footer layout -->
+    <!-- ==================== Footer ==================== -->
+<footer class="bg-gray-800 dark:bg-gray-900 text-gray-300 py-12">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col md:flex-row md:justify-between md:items-start space-y-8 md:space-y-0">
+
+      <!-- Branding -->
+      <div class="text-center md:text-left">
+        <a href="#" class="text-2xl font-bold text-white">
+          <span class="text-secondary-light dark:text-secondary-dark">P</span>ortfolio
+        </a>
+        <p class="mt-2 text-sm">© 2025 md khademul islam. All rights reserved.</p>
+      </div>
+
+      <!-- Email -->
+      <div class="text-center md:text-left">
+        <h3 class="text-lg font-semibold mb-2">Email</h3>
+        <p class="text-gray-400 break-all">khademulislam1080@gmail.com</p>
+      </div>
+
+      <!-- Contact & Social -->
+      <div class="flex flex-col items-center md:items-end text-center md:text-right">
+        <h3 class="text-lg font-semibold mb-2">Contact</h3>
+        <div class="flex flex-wrap justify-center md:justify-end gap-4 mb-4">
+          <a href="https://github.com/khademul-menaliam" class="hover:text-white transition duration-300">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/khademul-islam-a46915233/" class="hover:text-white transition duration-300">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://x.com/" class="hover:text-white transition duration-300">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.youtube.com/" class="hover:text-white transition duration-300">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+
+        <div class="flex flex-wrap justify-center md:justify-end gap-4 text-sm">
+          <a href="#" class="hover:text-white transition duration-300">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition duration-300">Terms of Service</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+    <!-- ==================== End Footer ==================== -->
+
+    <!-- ==================== Consolidated, optimized scripts ==================== -->
+    <script>
+    // Purpose: All interactive behaviors consolidated and executed after DOM is ready
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // ---------------------- External links hardening ----------------------
+        // Add rel="noopener noreferrer" to external nav links for security
+        document.querySelectorAll("nav a[href^='http']").forEach(link => {
+            link.setAttribute('rel', 'noopener noreferrer');
+        });
+
+        // Cache frequently used elements
+        const html = document.documentElement;
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const moonIcon = document.getElementById('moon-icon');
+        const sunIcon = document.getElementById('sun-icon');
+        const eyeToggle = document.getElementById('eye-comfort-toggle');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // ---------------------- Theme initialization ----------------------
+        function updateEyeComfortVisibility() {
+            if (html.classList.contains('dark')) {
+                eyeToggle.classList.add('hidden');
+                html.classList.remove('eye-comfort');
+            } else {
+                eyeToggle.classList.remove('hidden');
+            }
+        }
+
+        function updateThemeIcons() {
+            if (html.classList.contains('dark')) {
+                moonIcon.classList.remove('hidden');
+                sunIcon.classList.add('hidden');
+            } else {
+                moonIcon.classList.add('hidden');
+                sunIcon.classList.remove('hidden');
+            }
+        }
+
+        function initializeTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                html.classList.add('dark');
+            } else {
+                html.classList.remove('dark');
+            }
+
+            updateEyeComfortVisibility();
+
+            // Restore eye-comfort in light mode only
+            if (!html.classList.contains('dark') && localStorage.getItem('eye-comfort') === 'on') {
+                html.classList.add('eye-comfort');
+            }
+
+            updateThemeIcons();
+        }
+
+        initializeTheme();
+
+        // Respect system preference only if user hasn't chosen a theme
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (!localStorage.getItem('theme')) {
+                if (e.matches) {
+                    html.classList.add('dark');
+                } else {
+                    html.classList.remove('dark');
+                }
+                updateEyeComfortVisibility();
+                updateThemeIcons();
+            }
+        });
+
+        // ---------------------- Theme toggle button ----------------------
+        themeToggleBtn.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+            updateEyeComfortVisibility();
+            updateThemeIcons();
+            themeToggleBtn.style.transform = 'scale(0.95)';
+            setTimeout(() => themeToggleBtn.style.transform = 'scale(1)', 150);
+        });
+
+        // ---------------------- Eye comfort toggle (light mode only) ----------------------
+        eyeToggle.addEventListener('click', () => {
+            if (!html.classList.contains('dark')) {
+                html.classList.toggle('eye-comfort');
+                localStorage.setItem('eye-comfort', html.classList.contains('eye-comfort') ? 'on' : 'off');
+            }
+        });
+
+        // ---------------------- Mobile menu ----------------------
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // ---------------------- Active nav link highlight ----------------------
+        const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+
+        function setActiveByHref(targetHref) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            if (!targetHref) return;
+            navLinks.filter(link => link.getAttribute('href') === targetHref)
+                    .forEach(link => link.classList.add('active'));
+        }
+
+        function updateActiveNavLink() {
+            const currentPath = window.location.pathname;
+            const currentPage = currentPath.split('/').pop();
+            const currentHash = window.location.hash;
+
+            // If a section hash exists, prefer it; otherwise default to Home on root pages
+            if (currentHash) {
+                setActiveByHref(currentHash);
+            } else if (currentPath === '/' || currentPage === '' || currentPage === 'index.html' || currentPage === 'index.html') {
+                setActiveByHref('index.html');
+            } else {
+                setActiveByHref(null);
+            }
+        }
+
+        updateActiveNavLink();
+        window.addEventListener('hashchange', updateActiveNavLink);
+
+        // Highlight based on scroll position using IntersectionObserver
+        const sectionIds = navLinks
+            .map(l => l.getAttribute('href'))
+            .filter(href => href && href.startsWith('#'))
+            .map(href => href.substring(1));
+
+        const observedSections = sectionIds
+            .map(id => document.getElementById(id))
+            .filter(Boolean);
+
+        if ('IntersectionObserver' in window && observedSections.length) {
+            let activeSectionId = null;
+            const observer = new IntersectionObserver(entries => {
+                // Pick the most visible entry in viewport
+                const visible = entries
+                    .filter(e => e.isIntersecting)
+                    .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+                if (visible.length) {
+                    const id = visible[0].target.id;
+                    if (id !== activeSectionId) {
+                        activeSectionId = id;
+                        setActiveByHref(`#${id}`);
+                    }
+                }
+            }, { root: null, rootMargin: '0px 0px -40% 0px', threshold: [0.25, 0.5, 0.75] });
+
+            observedSections.forEach(section => observer.observe(section));
+        }
+
+        // ---------------------- Projects CTA visibility ----------------------
+        function updateViewProjectsVisibility() {
+            const viewProjects = document.getElementById('view-projects-btn');
+            if (!viewProjects) return;
+            const currentPath = window.location.pathname;
+            const currentPage = currentPath.split('/').pop();
+            if (currentPath === '/' || currentPage === '' || currentPage === 'index.html' || currentPage === 'index.html') {
+                viewProjects.classList.remove('hidden');
+            } else {
+                viewProjects.classList.add('hidden');
+            }
+        }
+        updateViewProjectsVisibility();
+
+        // ---------------------- Contact form: show fallback warning ----------------------
+        const sendBtn = document.getElementById('send-message-btn');
+        const warningMsg = document.getElementById('warning-msg');
+        if (sendBtn && warningMsg) {
+            sendBtn.addEventListener('click', () => {
+                warningMsg.classList.remove('hidden');
+            });
+        }
+
+        // ---------------------- AOS animations init ----------------------
+        if (window.AOS) { AOS.init(); }
+    });
+    </script>
+
+</body>
+</html>
