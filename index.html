@@ -405,6 +405,13 @@
                         </div>
                         <span class="text-sm">CSS3</span>
                     </div>
+                    <!-- Next.js -->
+                    <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-md flex items-center justify-center mb-2">
+                        <img src="https://cdn.worldvectorlogo.com/logos/nextjs-2.svg" alt="Next.js" class="w-8 h-8">
+                    </div>
+                    <span class="text-sm">Next.js</span>
+                    </div>
                     <!-- MySQL -->
                     <div class="flex flex-col items-center">
                         <div class="w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-md flex items-center justify-center mb-2">
@@ -523,6 +530,7 @@
                             <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">js</span>
                             <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">MySQL</span>
                             <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Laravel</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Auth</span>
                         </div>
                     </div>
                 </div>
@@ -550,9 +558,9 @@
                         </p>
                         <div class="flex flex-wrap gap-2">
                             <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">HTML</span>
-                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">js</span>
-                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">MySQL</span>
-                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Laravel</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Next.js</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Supabase</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">TailwindCSS</span>
                         </div>
                     </div>
                 </div>
@@ -582,7 +590,7 @@
                             <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Template</span>
                             <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Laravel</span>
                             <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">MySQL DB</span>
-                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Auth</span>
+                            <!-- <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Auth</span> -->
                         </div>
                     </div>
                 </div>
@@ -612,7 +620,8 @@
                             <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">HTML Template</span>
                             <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Laravel</span>
                             <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">JS</span>
-                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">MySQL</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">TailwindCSS</span>
+                            <!-- <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">MySQL</span> -->
                         </div>
                     </div>
                 </div>
@@ -643,6 +652,8 @@
                             <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">JS</span>
                             <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">MySQL</span>
                             <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">Laravel</span>
+                            <span class="text-xs px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full">TailwindCSS</span>
+                            
                         </div>
                     </div>
                 </div>
@@ -662,7 +673,7 @@
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-2">
                             <a href="view.html#project6" class="hover:underline">
-                                Attendance Management System
+                                Attendance Management System (Planing)
                             </a>
                         </h3>
 
@@ -1030,11 +1041,34 @@
         // ---------------------- Contact form: show fallback warning ----------------------
         const sendBtn = document.getElementById('send-message-btn');
         const warningMsg = document.getElementById('warning-msg');
+
         if (sendBtn && warningMsg) {
             sendBtn.addEventListener('click', () => {
+                // Show warning
                 warningMsg.classList.remove('hidden');
+
+                // Hide after 10 seconds (10000 ms)
+                setTimeout(() => {
+                    warningMsg.classList.add('hidden');
+                }, 10000);
+            });
+
+            // Hide warning on full page navigation
+            window.addEventListener('beforeunload', () => {
+                warningMsg.classList.add('hidden');
+            });
+
+            // Hide warning on history/navigation changes (SPA support)
+            window.addEventListener('popstate', () => {
+                warningMsg.classList.add('hidden');
+            });
+
+            // Hide warning on hash (#link) changes
+            window.addEventListener('hashchange', () => {
+                warningMsg.classList.add('hidden');
             });
         }
+
 
         // ---------------------- AOS animations init ----------------------
         if (window.AOS) { AOS.init(); }
